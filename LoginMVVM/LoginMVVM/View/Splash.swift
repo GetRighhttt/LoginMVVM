@@ -11,6 +11,7 @@ struct Splash: View {
     
     @State var animate = false
     @State var endSplash = false
+    @State var degrees = 720.0
     
     var body: some View {
         ZStack {
@@ -28,6 +29,7 @@ struct Splash: View {
                 
                     .scaleEffect(animate ? 5 : 1)
                     .frame(width: UIScreen.main.bounds.width)
+                    .rotation3DEffect(.degrees(degrees), axis: (x: 1, y: 1, z: 1))
             }
             .ignoresSafeArea()
             .onAppear(perform: animateSplash)
@@ -36,14 +38,16 @@ struct Splash: View {
     }
     
     func animateSplash() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
             
             withAnimation(Animation.easeOut(duration: 0.55)) {
                 animate.toggle()
+                self.degrees = 360
             }
             
-            withAnimation(Animation.easeIn(duration: 0.45)) {
+            withAnimation(Animation.linear(duration: 0.75)) {
                 endSplash.toggle()
+                self.degrees = 360
             }
         }
     }
