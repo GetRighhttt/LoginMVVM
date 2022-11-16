@@ -8,16 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var viewModel = ViewModel()
+    
     var body: some View {
-        ZStack {
-            Color("DarkerBlue").ignoresSafeArea(.all, edges: .all)
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
+        
+        // if user is authenticated go to next screen
+        if !viewModel.authenticated {
+            ZStack {
+                Color("Pink").ignoresSafeArea()
+                VStack(alignment: .center, spacing: 40) {
+                    Image(systemName: "hourglass")
+                        .foregroundColor(Color("LightBlue")
+                }
             }
-            .padding()
+        } else {
+            // else show login screen
+            ZStack {
+                Color("DarkerBlue").ignoresSafeArea(.all, edges: .all)
+                VStack {
+                    
+                }
+                .padding()
+            }
         }
     }
 }
