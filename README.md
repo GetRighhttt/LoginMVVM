@@ -5,4 +5,4 @@ nice. Easy implementation. Authentication with @AppStorage, and saves info<br>
 using user defaults. Added some animations, a splash screen, and a nice color palette.<br>
 Also added in a few alert dialog boxes for demo purposes.</p>
 
-https://user-images.githubusercontent.com/105057858/202200168-d924de3a-4237-40b2-959b-d9f869ee2c07.mov
+https://user-images.githubusercontent.com/105057858/202205600-dd53b6e8-69e4-44a4-9698-cea9682f7782.mov
