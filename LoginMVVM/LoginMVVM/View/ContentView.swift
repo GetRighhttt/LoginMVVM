@@ -126,11 +126,11 @@ struct ContentView: View {
                             Alert(
                                 title: Text("Forgot Password:"),
                                 message: Text("A link has been sent to your email."),
-                                primaryButton: .default(
+                                primaryButton: .default( // blue outline
                                     Text("Resend"),
                                     action: viewModel.buttonsNotUsed
                                 ),
-                                secondaryButton: .destructive(
+                                secondaryButton: .destructive( // red outline
                                     Text("Dismiss"),
                                     action: viewModel.buttonsNotUsed
                                 )
